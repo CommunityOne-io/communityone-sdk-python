@@ -5,17 +5,17 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="communityone",
-    version="1.0.2",
+    version="1.0.3",
     author="CommunityOne",
     author_email="support@communityone.io",
     description="Official Python SDK for CommunityOne API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/communityone/communityone-sdk",
+    url="https://github.com/CommunityOne-io/communityone-sdk",
     project_urls={
         "Homepage": "https://communityone.io",
         "Documentation": "https://api.communityone.io/v1/documentation",
-        "Bug Tracker": "https://github.com/communityone/communityone-sdk/issues",
+        "Bug Tracker": "https://github.com/CommunityOne-io/communityone-sdk/issues",
     },
     packages=find_packages(),
     license="MIT",

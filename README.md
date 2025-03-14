@@ -1,5 +1,8 @@
 # CommunityOne SDK
 
+[![PyPI version](https://img.shields.io/pypi/v/communityone.svg)](https://pypi.org/project/communityone/)
+[![Python versions](https://img.shields.io/pypi/pyversions/communityone.svg)](https://pypi.org/project/communityone/)
+
 Official Python SDK for interacting with the [CommunityOne](https://communityone.io) API. This SDK provides both synchronous and asynchronous methods to interact with CommunityOne's API endpoints.
 
 ## About CommunityOne

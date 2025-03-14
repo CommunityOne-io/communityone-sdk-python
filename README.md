@@ -26,13 +26,13 @@ sdk = CommunityOneSDK(server_id=YOUR_SERVER_ID, api_key="YOUR_API_KEY")
 custom_quests = sdk.get_custom_quests()
 
 # Get player information
-player_info = sdk.get_player_info("DISCORD_USER_ID")
+player_info = sdk.get_player_info(discord_user_id="DISCORD_USER_ID")
 
 # Complete a custom quest
-result = sdk.complete_custom_quest(quest_id="CUSTOM_QUEST_ID", discord_user_id="DISCORD_USER_ID")
+result = sdk.complete_custom_quest(custom_quest_id="CUSTOM_QUEST_ID", discord_user_id="DISCORD_USER_ID")
 
 # Get completed members for a quest
-completed_members = sdk.get_completed_members(quest_id="CUSTOM_QUEST_ID")
+completed_members = sdk.get_completed_members(custom_quest_id="CUSTOM_QUEST_ID")
 ```
 
 ## Async Support
@@ -53,10 +53,10 @@ async def main():
     player_info = await sdk.get_player_info_async("DISCORD_USER_ID")
     
     # Complete a custom quest asynchronously
-    result = await sdk.complete_custom_quest_async(quest_id="CUSTOM_QUEST_ID", discord_user_id="DISCORD_USER_ID")
+    result = await sdk.complete_custom_quest_async(custom_quest_id="CUSTOM_QUEST_ID", discord_user_id="DISCORD_USER_ID")
     
     # Get completed members asynchronously
-    completed_members = await sdk.get_completed_members_async(quest_id="CUSTOM_QUEST_ID")
+    completed_members = await sdk.get_completed_members_async(custom_quest_id="CUSTOM_QUEST_ID")
 
 # Run the async code
 asyncio.run(main())

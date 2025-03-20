@@ -79,6 +79,18 @@ asyncio.run(main())
 - `complete_custom_quest_async(custom_quest_id, discord_user_id)`: Complete a quest asynchronously
 - `get_completed_members_async(custom_quest_id)`: Get completed members asynchronously
 
+## Testing Mode
+
+CommunityOne allows you to test the full quest completion workflow in your application without affecting production quests data, helping you verify quest functionality before releasing it to your community. When a quest is in testing mode:
+- The quest won't be visible to regular Discord server members
+- No code changes needed! - use the same SDK methods for testing and production quests (the API automatically routes to our internal test environment)
+
+**How to enable:**
+1. Go to your server's [CommunityOne dashboard](https://communityone.io/dashboard)
+2. Navigate to Hype Engine > Custom Quests
+3. Click the Edit button on your quest
+4. Enable testing mode
+
 ## Rate Limiting
 
 All API endpoints are subject to rate limiting:

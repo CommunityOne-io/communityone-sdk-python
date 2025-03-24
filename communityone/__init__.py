@@ -94,7 +94,7 @@ class CommunityOneSDK:
                 - description (str): The description of the quest
                 - external_url (str, optional): The external URL for the quest
                 - reward_points (int): The points rewarded for completing the quest
-                - reward_role_id (int, optional): The role ID rewarded for completing the quest
+                - reward_role_id (str, optional): The role ID rewarded for completing the quest
                 - archived (bool): Whether the quest is archived
 
         Raises:
@@ -115,7 +115,7 @@ class CommunityOneSDK:
                 - description (str): The description of the quest
                 - external_url (str, optional): The external URL for the quest
                 - reward_points (int): The points rewarded for completing the quest
-                - reward_role_id (int, optional): The role ID rewarded for completing the quest
+                - reward_role_id (str, optional): The role ID rewarded for completing the quest
                 - archived (bool): Whether the quest is archived
 
         Raises:

@@ -15,12 +15,14 @@ class CommunityOneSDK:
         - get_player_info(discord_user_id): Get information about a player
         - complete_custom_quest(custom_quest_id, discord_user_id): Mark a custom quest as completed
         - get_completed_members(custom_quest_id): Get all members who completed a quest
+        - get_global_leaderboard(): Get global leaderboard for the server
 
         Asynchronous Methods:
         - get_custom_quests_async(): Get all custom quests for the server asynchronously
         - get_player_info_async(discord_user_id): Get player information asynchronously
         - complete_custom_quest_async(custom_quest_id, discord_user_id): Complete a quest asynchronously
         - get_completed_members_async(custom_quest_id): Get completed members asynchronously
+        - get_global_leaderboard_async(): Get global leaderboard asynchronously
     """
 
     BASE_URL = "https://api.communityone.io/v1"
@@ -266,6 +268,48 @@ class CommunityOneSDK:
         url = self._format_url(
             f"/servers/{self.server_id}/custom-quests/{custom_quest_id}/completed-members"
         )
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url, headers=self.headers) as response:
+                return await self._handle_async_response(response)
+
+    # Get global leaderboard endpoints
+    def get_global_leaderboard(self) -> List[Dict[str, Any]]:
+        """
+        Get the global leaderboard for the server, sorted by points descending.
+
+        Returns:
+            List[Dict[str, Any]]: A list of leaderboard entries, each containing:
+                - rank (int): The player's rank on the leaderboard
+                - points (int): The player's total points
+                - discord_user_id (str): The Discord user ID
+                - discord_username (str): The Discord username
+                - discord_display_name (str): The Discord display name
+                - discord_avatar (str, optional): The Discord avatar URL
+
+        Raises:
+            requests.HTTPError: If the request fails
+        """
+        url = self._format_url(f"/servers/{self.server_id}/leaderboard/global")
+        response = requests.get(url, headers=self.headers)
+        return self._handle_response(response)
+
+    async def get_global_leaderboard_async(self) -> List[Dict[str, Any]]:
+        """
+        Get the global leaderboard for the server asynchronously, sorted by points descending.
+
+        Returns:
+            List[Dict[str, Any]]: A list of leaderboard entries, each containing:
+                - rank (int): The player's rank on the leaderboard
+                - points (int): The player's total points
+                - discord_user_id (str): The Discord user ID
+                - discord_username (str): The Discord username
+                - discord_display_name (str): The Discord display name
+                - discord_avatar (str, optional): The Discord avatar URL
+
+        Raises:
+            aiohttp.ClientResponseError: If the request fails
+        """
+        url = self._format_url(f"/servers/{self.server_id}/leaderboard/global")
         async with aiohttp.ClientSession() as session:
             async with session.get(url, headers=self.headers) as response:
                 return await self._handle_async_response(response)

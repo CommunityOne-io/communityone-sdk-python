@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="communityone",
-    version="1.1.1",
+    version="1.2.0",
     author="CommunityOne",
     author_email="support@communityone.io",
     description="Official Python SDK for CommunityOne API",

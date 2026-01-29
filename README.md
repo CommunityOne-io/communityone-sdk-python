@@ -36,6 +36,9 @@ result = sdk.complete_custom_quest(custom_quest_id="CUSTOM_QUEST_ID", discord_us
 
 # Get completed members for a quest
 completed_members = sdk.get_completed_members(custom_quest_id="CUSTOM_QUEST_ID")
+
+# Get global leaderboard
+leaderboard = sdk.get_global_leaderboard()
 ```
 
 ## Async Support
@@ -60,6 +63,9 @@ async def main():
     
     # Get completed members asynchronously
     completed_members = await sdk.get_completed_members_async(custom_quest_id="CUSTOM_QUEST_ID")
+    
+    # Get global leaderboard asynchronously
+    leaderboard = await sdk.get_global_leaderboard_async()
 
 # Run the async code
 asyncio.run(main())
@@ -72,12 +78,14 @@ asyncio.run(main())
 - `get_player_info(discord_user_id)`: Get information about a player
 - `complete_custom_quest(custom_quest_id, discord_user_id)`: Mark a custom quest as completed
 - `get_completed_members(custom_quest_id)`: Get all members who completed a quest
+- `get_global_leaderboard()`: Get global leaderboard for the server
 
 ### Asynchronous Methods
 - `get_custom_quests_async()`: Get all custom quests for the server asynchronously
 - `get_player_info_async(discord_user_id)`: Get player information asynchronously
 - `complete_custom_quest_async(custom_quest_id, discord_user_id)`: Complete a quest asynchronously
 - `get_completed_members_async(custom_quest_id)`: Get completed members asynchronously
+- `get_global_leaderboard_async()`: Get global leaderboard asynchronously
 
 ## Testing Mode
 
